@@ -1,0 +1,282 @@
+[
+  {
+    "id": "M01",
+    "section_number": "\u00a71.0",
+    "title": "Definitions & Scope",
+    "full_text": "This section establishes the defined terms used throughout the Master Supply Agreement. 'Buyer' refers to the purchasing entity and its authorized affiliates. 'Supplier' refers to the party providing goods, assemblies, or services under this Agreement. 'Products' means all parts, components, and sub-assemblies described in the applicable Purchase Orders and Statements of Work. The scope of this Agreement covers all direct-material procurement activities between the parties unless explicitly excluded in writing. Any conflict between this Agreement and a Purchase Order shall be resolved in favor of this Agreement unless the Purchase Order expressly states otherwise. All appendices, exhibits, and schedules referenced herein are incorporated by reference.",
+    "key_provisions": [
+      "Defines Buyer, Supplier, Products, and Affiliates",
+      "Scope covers all direct-material procurement activities",
+      "Agreement takes precedence over conflicting Purchase Orders",
+      "Appendices and schedules incorporated by reference"
+    ],
+    "relevance_to_eco": "Ensures that ECO-related changes are clearly within the agreement scope and that defined terms (e.g., 'Products', 'Specifications') unambiguously cover revised parts.",
+    "negotiation_lever": "GSM can reference scope definitions to argue that ECO-driven part revisions remain within the existing agreement and do not require a new contract or separate pricing framework."
+  },
+  {
+    "id": "M02",
+    "section_number": "\u00a72.0",
+    "title": "Pricing & Payment Terms",
+    "full_text": "All pricing shall be set forth in the applicable Purchase Order or pricing exhibit and shall remain firm for the period specified therein. Prices are denominated in the currency stated on the Purchase Order. Supplier shall submit invoices within thirty (30) days of shipment, and Buyer shall pay undisputed invoices within sixty (60) days of receipt. Any price increase requests must be submitted in writing with full cost-breakdown documentation at least ninety (90) days before the requested effective date. Buyer reserves the right to benchmark pricing against market indices and competitive quotations. Early-payment discounts of two percent (2%) net ten (10) days may be offered at Buyer's discretion. All pricing shall be exclusive of taxes, duties, and tariffs unless otherwise agreed.",
+    "key_provisions": [
+      "Prices firm for the stated period; changes require 90-day written notice",
+      "Payment terms: Net 60 from invoice receipt",
+      "Full cost-breakdown required for any price increase request",
+      "Buyer may benchmark against market pricing"
+    ],
+    "relevance_to_eco": "ECO implementation often triggers cost changes; this clause governs how those cost deltas are documented, justified, and negotiated between parties.",
+    "negotiation_lever": "GSM can require detailed should-cost breakdowns for any ECO-driven price change, rejecting blanket increases and leveraging benchmarking rights to validate supplier claims."
+  },
+  {
+    "id": "M03",
+    "section_number": "\u00a73.0",
+    "title": "Engineering Change Orders",
+    "full_text": "Either party may propose an Engineering Change Order (ECO) affecting product design, materials, processes, or specifications. All ECOs must be submitted on the standard ECO form and include a detailed description of the proposed change, affected part numbers, estimated cost impact, and timeline. Supplier shall respond to Buyer-initiated ECOs within fifteen (15) business days with a formal quotation covering tooling modifications, material cost changes, scrap or obsolescence exposure, and any non-recurring charges. No ECO shall be implemented without prior written approval from both parties. Supplier shall maintain full traceability between pre-change and post-change configurations. Costs arising from Supplier-initiated ECOs for process improvement shall be borne by the Supplier unless otherwise agreed. The parties shall use a shared ECO tracking system to maintain revision history and approval status.",
+    "key_provisions": [
+      "Formal ECO submission process with standard form required",
+      "15-business-day response window for Supplier quotation",
+      "No implementation without mutual written approval",
+      "Supplier bears cost of Supplier-initiated process-improvement ECOs"
+    ],
+    "relevance_to_eco": "This is the central clause governing how ECOs are proposed, evaluated, priced, and implemented \u2014 it directly controls the ECO cost negotiation process.",
+    "negotiation_lever": "GSM can enforce the 15-day response SLA, require granular cost breakdowns in the ECO quotation, and push back on Supplier attempts to bundle unrelated costs into ECO pricing."
+  },
+  {
+    "id": "M04",
+    "section_number": "\u00a74.0",
+    "title": "Tooling Ownership & Amortization",
+    "full_text": "All tooling, molds, dies, fixtures, and gauges funded by Buyer shall remain the exclusive property of Buyer regardless of physical location. Supplier shall maintain, insure, and clearly label all Buyer-owned tooling. Tooling costs may be amortized over a mutually agreed production volume, and amortization schedules shall be documented in writing. Upon completion of the amortization period, per-unit pricing shall be reduced by the amortized tooling component. Supplier shall not use Buyer-owned tooling for production of parts for any third party without prior written consent. In the event of agreement termination, Supplier shall return or make available all Buyer-owned tooling within thirty (30) days. Supplier shall provide annual tooling condition reports and notify Buyer of any tooling requiring refurbishment or replacement.",
+    "key_provisions": [
+      "Buyer-funded tooling remains Buyer property at all times",
+      "Amortization schedule must be documented; pricing reduced after payoff",
+      "No third-party use of Buyer tooling without written consent",
+      "Tooling returned within 30 days upon termination"
+    ],
+    "relevance_to_eco": "ECOs frequently require tooling modifications or new tooling; this clause determines who owns the modified tooling, how modification costs are amortized, and the price impact post-amortization.",
+    "negotiation_lever": "GSM can ensure ECO-related tooling modifications are treated as Buyer property, negotiate favorable amortization volumes, and secure automatic per-unit price reductions once tooling is paid off."
+  },
+  {
+    "id": "M05",
+    "section_number": "\u00a75.0",
+    "title": "NRE Cost Allocation",
+    "full_text": "Non-Recurring Engineering (NRE) charges cover design, prototyping, validation testing, process development, and first-article inspection costs associated with new product introduction or engineering changes. All NRE charges must be quoted separately from per-unit production pricing and supported by detailed cost estimates. Buyer and Supplier shall agree on NRE allocation prior to commencement of any NRE activity. NRE payments may be structured as milestone-based payments tied to deliverable completion. Intellectual property developed under NRE funding by Buyer shall be owned by Buyer. NRE costs shall not be duplicated or embedded in recurring piece-price without explicit written agreement. Supplier shall provide a final NRE reconciliation report within sixty (60) days of production start.",
+    "key_provisions": [
+      "NRE quoted separately from piece-price with detailed cost estimates",
+      "Milestone-based payment structure tied to deliverables",
+      "IP from Buyer-funded NRE belongs to Buyer",
+      "Final NRE reconciliation required within 60 days of production start"
+    ],
+    "relevance_to_eco": "ECOs often generate NRE charges for re-engineering, re-validation, and re-qualification; this clause prevents double-charging and ensures cost transparency.",
+    "negotiation_lever": "GSM can challenge NRE charges that appear inflated, require milestone-based payments to control cash flow, and demand reconciliation to recover overpayments after actual NRE costs are known."
+  },
+  {
+    "id": "M06",
+    "section_number": "\u00a76.0",
+    "title": "Quality Requirements & Cpk",
+    "full_text": "Supplier shall maintain a quality management system certified to ISO 9001 or equivalent and shall comply with all Buyer-specified quality requirements. Critical-to-quality dimensions shall achieve a minimum process capability index (Cpk) of 1.33 at steady-state production, with a target of 1.67 for safety-critical characteristics. Supplier shall perform first-article inspection (FAI) per AS9102 or equivalent for all new parts and after any ECO affecting form, fit, or function. Statistical process control (SPC) data shall be maintained and made available to Buyer upon request. Incoming quality defect rates shall not exceed 500 parts per million (PPM) on a rolling twelve-month basis. Non-conforming material shall be dispositioned per the Buyer's approved non-conformance process. Supplier shall participate in corrective and preventive action (CAPA) activities as requested by Buyer.",
+    "key_provisions": [
+      "ISO 9001 certification required; Cpk >= 1.33 minimum",
+      "FAI required for new parts and after form/fit/function ECOs",
+      "Maximum 500 PPM defect rate on rolling 12-month basis",
+      "SPC data available to Buyer on request"
+    ],
+    "relevance_to_eco": "ECOs changing form, fit, or function trigger re-qualification and FAI requirements; quality targets must be maintained through the transition, and Cpk data validates process stability post-ECO.",
+    "negotiation_lever": "GSM can tie ECO approval to demonstrated post-change Cpk compliance, use quality data to justify or challenge ECO necessity, and negotiate cost sharing for ECO-related re-qualification activities."
+  },
+  {
+    "id": "M07",
+    "section_number": "\u00a77.0",
+    "title": "Warranty & Liability",
+    "full_text": "Supplier warrants that all Products shall conform to the applicable specifications, drawings, and quality requirements for a period of twenty-four (24) months from the date of delivery to Buyer's designated facility or eighteen (18) months from first end-use, whichever occurs first. Warranty coverage extends to defects in materials, workmanship, and design where the Supplier is responsible for design. Supplier shall bear all costs associated with warranty claims, including inspection, repair, replacement, rework, and associated freight. Supplier's liability for warranty claims shall include reasonable consequential damages including Buyer's line-down costs and end-customer penalties, subject to a cap of one hundred percent (100%) of the trailing twelve-month purchase volume. Supplier shall respond to warranty claims within five (5) business days and provide root-cause analysis within fifteen (15) business days.",
+    "key_provisions": [
+      "24-month warranty from delivery or 18 months from first use",
+      "Supplier bears all warranty-related costs including freight",
+      "Consequential damages included up to trailing 12-month purchase volume",
+      "Root-cause analysis required within 15 business days"
+    ],
+    "relevance_to_eco": "Post-ECO warranty obligations must be clearly defined \u2014 particularly whether warranty restarts for modified parts and how liability is allocated for defects introduced by the change.",
+    "negotiation_lever": "GSM can negotiate warranty restart provisions for ECO-modified parts, ensure Supplier remains liable for defects caused by improperly implemented ECOs, and use warranty cost exposure to motivate thorough ECO validation."
+  },
+  {
+    "id": "M08",
+    "section_number": "\u00a78.0",
+    "title": "Delivery & Lead Time",
+    "full_text": "Supplier shall deliver Products in accordance with the delivery schedule specified in each Purchase Order. Standard production lead time shall not exceed the period agreed upon in the pricing exhibit and shall be measured from Purchase Order acknowledgment to shipment. Supplier shall maintain on-time delivery performance of at least ninety-five percent (95%) measured on a monthly basis. Any anticipated delivery delays must be communicated to Buyer within forty-eight (48) hours of the Supplier becoming aware of the delay. Supplier shall maintain safety stock levels as agreed upon in the capacity planning exhibit. Expedite fees shall be borne by the party responsible for the schedule deviation. Delivery performance shall be measured using Buyer's receiving records as the definitive source.",
+    "key_provisions": [
+      "Lead times fixed per pricing exhibit; 95% OTD minimum",
+      "48-hour notification required for anticipated delays",
+      "Safety stock levels per capacity planning exhibit",
+      "Expedite fees allocated to party causing the deviation"
+    ],
+    "relevance_to_eco": "ECOs can disrupt delivery schedules due to re-qualification, material changes, or tooling modifications; this clause defines how delivery obligations adjust during ECO transitions.",
+    "negotiation_lever": "GSM can negotiate ECO transition buffers, require Supplier to maintain delivery commitments during changeover, and allocate expedite costs to Supplier if ECO implementation delays are within their control."
+  },
+  {
+    "id": "M09",
+    "section_number": "\u00a79.0",
+    "title": "Capacity & Volume Commitments",
+    "full_text": "Buyer shall provide Supplier with a rolling twelve-month demand forecast, updated monthly, to facilitate capacity planning. Forecasts are non-binding estimates unless converted to firm Purchase Orders. Supplier shall maintain sufficient capacity to fulfill the forecast volumes and shall notify Buyer within thirty (30) days if capacity constraints are anticipated. Firm volume commitments shall be defined in the applicable Purchase Order. Volume flexibility of plus or minus twenty percent (+/- 20%) from the forecasted quantity shall be accommodated without price adjustment. If actual volumes fall below the minimum commitment level defined in the pricing exhibit, Buyer and Supplier shall negotiate a price adjustment in good faith. Supplier shall not allocate Buyer-dedicated capacity to other customers without prior written consent.",
+    "key_provisions": [
+      "Rolling 12-month non-binding forecast updated monthly",
+      "+/- 20% volume flexibility without price adjustment",
+      "Supplier must notify of capacity constraints within 30 days",
+      "Dedicated capacity cannot be reallocated without consent"
+    ],
+    "relevance_to_eco": "ECOs may alter production volumes during transition periods; this clause protects both parties when volumes shift due to part-number changes, phase-in/phase-out schedules, or design consolidation.",
+    "negotiation_lever": "GSM can use volume commitments as leverage to negotiate lower ECO costs, argue that ECO-related volume dips fall within the flexibility band, and prevent Supplier from using temporary ECO-driven volume drops to trigger price increases."
+  },
+  {
+    "id": "M10",
+    "section_number": "\u00a710.0",
+    "title": "Intellectual Property",
+    "full_text": "Each party retains ownership of its pre-existing intellectual property. Intellectual property developed solely by Supplier in the performance of this Agreement using Supplier's own resources shall remain Supplier's property, subject to a perpetual, royalty-free license to Buyer for use with the Products. Intellectual property developed jointly or funded by Buyer shall be owned by Buyer. Supplier shall not file patent applications on Buyer-funded developments without prior written consent. Neither party shall reverse-engineer the other party's proprietary technology. Supplier represents and warrants that the Products do not infringe any third-party intellectual property rights and shall indemnify Buyer against infringement claims. All technical data, drawings, and specifications provided by Buyer remain Buyer's confidential property.",
+    "key_provisions": [
+      "Pre-existing IP retained by originating party",
+      "Buyer-funded IP owned by Buyer; Supplier-funded IP licensed to Buyer",
+      "Non-infringement warranty and indemnification by Supplier",
+      "No reverse engineering of proprietary technology"
+    ],
+    "relevance_to_eco": "ECOs may create new IP through design modifications; this clause determines ownership of ECO-generated innovations and prevents Supplier from claiming IP rights on Buyer-funded design changes.",
+    "negotiation_lever": "GSM can ensure that any innovations arising from ECO implementation funded by Buyer remain Buyer's IP, preventing Supplier lock-in and preserving the ability to resource the part."
+  },
+  {
+    "id": "M11",
+    "section_number": "\u00a711.0",
+    "title": "Confidentiality",
+    "full_text": "Each party agrees to maintain the confidentiality of all proprietary information received from the other party and to use such information solely for the purposes of this Agreement. Confidential information includes, but is not limited to, pricing, technical specifications, drawings, business plans, customer lists, and manufacturing processes. The receiving party shall protect confidential information with at least the same degree of care it uses for its own confidential information, but no less than reasonable care. Confidentiality obligations shall survive termination of this Agreement for a period of five (5) years. Confidential information does not include information that is publicly available, independently developed, or rightfully received from a third party without restriction. Disclosures required by law or regulation are permitted provided the disclosing party is given reasonable prior notice.",
+    "key_provisions": [
+      "All proprietary information protected under confidentiality",
+      "Use restricted to purposes of the Agreement",
+      "5-year survival period after termination",
+      "Standard exclusions for public, independent, and third-party information"
+    ],
+    "relevance_to_eco": "ECO documentation often contains sensitive cost, design, and process information; confidentiality provisions ensure that ECO-related data shared between parties is protected from disclosure to competitors.",
+    "negotiation_lever": "GSM can use confidentiality provisions to require Supplier to protect ECO cost data from being shared with competing Buyers, and to safeguard proprietary design information embedded in ECO packages."
+  },
+  {
+    "id": "M12",
+    "section_number": "\u00a712.0",
+    "title": "Force Majeure",
+    "full_text": "Neither party shall be liable for delays or failures in performance resulting from events beyond its reasonable control, including but not limited to natural disasters, pandemics, wars, terrorism, government actions, labor disputes, or major equipment failures. The affected party shall notify the other party in writing within seventy-two (72) hours of becoming aware of the force majeure event and shall use commercially reasonable efforts to mitigate the impact. If a force majeure event continues for more than ninety (90) days, either party may terminate the affected Purchase Orders without liability. Force majeure shall not excuse payment obligations for goods already delivered and accepted. The affected party shall provide regular status updates and a recovery plan within fifteen (15) days of the initial notification. Claims of force majeure are subject to verification by the non-affected party.",
+    "key_provisions": [
+      "72-hour written notification requirement",
+      "Commercially reasonable mitigation efforts required",
+      "Termination right after 90 days of continued force majeure",
+      "Payment obligations for delivered goods survive force majeure"
+    ],
+    "relevance_to_eco": "Force majeure events may necessitate emergency ECOs (e.g., alternate material sourcing) or delay planned ECO implementation; this clause defines how force majeure interacts with ECO timelines.",
+    "negotiation_lever": "GSM can ensure that force majeure does not become a blanket excuse for ECO delays, require recovery plans that include ECO timeline restoration, and distinguish genuine force majeure from Supplier operational failures."
+  },
+  {
+    "id": "M13",
+    "section_number": "\u00a713.0",
+    "title": "Termination & Exit Costs",
+    "full_text": "Either party may terminate this Agreement for convenience upon one hundred eighty (180) days' prior written notice. Buyer may terminate for cause immediately upon written notice if Supplier commits a material breach that remains uncured for thirty (30) days after notice. Upon termination, Buyer shall pay for all conforming finished goods, work-in-progress, and raw materials procured against firm Purchase Orders, subject to Supplier's obligation to mitigate costs. Supplier shall provide a detailed exit cost estimate within thirty (30) days of receiving termination notice, covering inventory, work-in-progress, dedicated equipment depreciation, and workforce adjustment costs. Exit costs shall not include lost profits or anticipated future revenue. Supplier shall cooperate fully with transition activities, including technology transfer to an alternate source if requested. All Buyer-owned property shall be returned within sixty (60) days of termination.",
+    "key_provisions": [
+      "180-day notice for convenience termination; immediate for uncured material breach",
+      "Buyer pays for conforming goods and committed materials",
+      "Exit cost estimate required within 30 days; excludes lost profits",
+      "Full cooperation with transition and technology transfer"
+    ],
+    "relevance_to_eco": "ECOs can trigger partial or full termination scenarios if a design change eliminates a part or shifts production to an alternate supplier; exit cost provisions directly affect the total cost of an ECO.",
+    "negotiation_lever": "GSM can use exit cost provisions to quantify the full financial impact of ECO-driven supplier transitions, negotiate caps on exit costs, and ensure that technology transfer obligations facilitate smooth ECO implementation across suppliers."
+  },
+  {
+    "id": "M14",
+    "section_number": "\u00a714.0",
+    "title": "Continuous Improvement & Cost Reduction",
+    "full_text": "Supplier shall actively pursue continuous improvement initiatives targeting annual cost reductions of three to five percent (3-5%) through process optimization, yield improvement, material substitution, and design-for-manufacturability proposals. Supplier shall submit a formal cost-reduction roadmap annually and report progress quarterly. Cost savings achieved through Buyer-funded initiatives shall accrue entirely to Buyer. Savings from joint initiatives shall be shared equally unless otherwise agreed. Supplier-initiated improvements that do not affect form, fit, or function may be implemented after written notification to Buyer. All cost-reduction proposals must include a risk assessment and validation plan. Buyer reserves the right to audit Supplier's cost structure annually to identify additional improvement opportunities.",
+    "key_provisions": [
+      "3-5% annual cost reduction target",
+      "Annual cost-reduction roadmap with quarterly progress reports",
+      "Savings allocation: 100% to Buyer for Buyer-funded, 50/50 for joint initiatives",
+      "Annual cost-structure audit rights for Buyer"
+    ],
+    "relevance_to_eco": "ECOs can be vehicles for cost reduction (e.g., material substitution, process simplification); this clause aligns ECO-driven savings with contractual continuous improvement obligations.",
+    "negotiation_lever": "GSM can frame cost-reducing ECOs as part of the Supplier's contractual CI obligation, negotiate favorable savings-sharing ratios, and use audit rights to validate that Supplier-claimed ECO costs are not inflated."
+  },
+  {
+    "id": "M15",
+    "section_number": "\u00a715.0",
+    "title": "Supplier Scorecards & KPIs",
+    "full_text": "Supplier performance shall be measured using a balanced scorecard covering quality (PPM, CAPA closure rate), delivery (on-time delivery percentage, lead time adherence), cost (year-over-year price trend, cost-reduction attainment), and responsiveness (ECO turnaround time, RFQ response time). Scorecards shall be reviewed jointly on a quarterly basis with Supplier management. Suppliers scoring below the minimum acceptable threshold for two consecutive quarters shall be placed on a performance improvement plan (PIP). Sustained underperformance may result in volume reallocation or disqualification. Supplier shall provide all data necessary for scorecard computation in the format and frequency specified by Buyer. Scorecard results shall be a factor in new business award decisions and ECO implementation prioritization.",
+    "key_provisions": [
+      "Balanced scorecard: quality, delivery, cost, responsiveness",
+      "Quarterly joint reviews with Supplier management",
+      "PIP triggered by two consecutive quarters below threshold",
+      "Scorecard results influence new business awards and ECO prioritization"
+    ],
+    "relevance_to_eco": "ECO turnaround time and responsiveness are explicit scorecard metrics; Supplier performance on ECOs directly affects their standing and future business opportunities.",
+    "negotiation_lever": "GSM can use scorecard data to motivate faster and more cost-effective ECO responses, tie ECO performance to volume allocation decisions, and benchmark Supplier ECO responsiveness against peers."
+  },
+  {
+    "id": "M16",
+    "section_number": "\u00a716.0",
+    "title": "Subcontracting & Supply Chain Transparency",
+    "full_text": "Supplier shall not subcontract any portion of the work under this Agreement without prior written approval from Buyer. All approved subcontractors shall be subject to the same quality, delivery, and compliance requirements as the Supplier. Supplier shall maintain a current list of all sub-tier suppliers providing critical materials or performing key processes and shall disclose this list to Buyer upon request. Changes to sub-tier suppliers for critical materials require sixty (60) days' advance written notification and Buyer approval. Supplier is fully responsible for the performance of its subcontractors. Buyer reserves the right to audit sub-tier suppliers and to require corrective actions. Supplier shall have supply chain risk mitigation plans covering single-source dependencies and geopolitical risks.",
+    "key_provisions": [
+      "No subcontracting without prior written Buyer approval",
+      "Sub-tier supplier list maintained and disclosed on request",
+      "60-day notification for critical sub-tier supplier changes",
+      "Buyer has audit rights over sub-tier suppliers"
+    ],
+    "relevance_to_eco": "ECOs may require changes to sub-tier suppliers or materials; this clause ensures Buyer visibility into supply chain impacts of ECOs and prevents unauthorized sub-tier changes disguised as ECO implementation.",
+    "negotiation_lever": "GSM can require Supplier to disclose sub-tier cost impacts of ECOs, prevent Supplier from switching to lower-cost sub-tier sources without passing savings through, and audit sub-tier operations to validate ECO cost claims."
+  },
+  {
+    "id": "M17",
+    "section_number": "\u00a717.0",
+    "title": "End-of-Life & Last-Time-Buy",
+    "full_text": "Supplier shall provide at least twelve (12) months' written notice of any Product end-of-life (EOL) or discontinuation. The EOL notice shall include a last-time-buy (LTB) date, recommended replacement or substitute parts, and estimated remaining inventory availability. Buyer shall have ninety (90) days from the EOL notice to submit a last-time-buy order. Supplier shall honor last-time-buy orders at current pricing unless raw material cost increases are documented and justified. Supplier shall maintain the capability to produce EOL Products for a minimum of six (6) months following the LTB date to accommodate unanticipated demand. If Supplier discontinues a Product without providing the required notice, Supplier shall bear all costs associated with Buyer's transition to an alternative source.",
+    "key_provisions": [
+      "12-month advance EOL notification required",
+      "90-day window for Buyer to place last-time-buy orders",
+      "LTB pricing at current rates unless material costs justify increase",
+      "6-month production capability maintained after LTB date"
+    ],
+    "relevance_to_eco": "EOL situations often trigger ECOs for replacement parts or redesigns; this clause defines the timeline and cost framework for EOL-driven ECO activities.",
+    "negotiation_lever": "GSM can use EOL provisions to plan ECO transitions well in advance, negotiate favorable LTB pricing to bridge the gap during ECO implementation, and hold Suppliers accountable for costs if inadequate EOL notice forces emergency ECOs."
+  },
+  {
+    "id": "M18",
+    "section_number": "\u00a718.0",
+    "title": "Compliance (RoHS, REACH, Conflict Minerals)",
+    "full_text": "Supplier shall ensure that all Products comply with applicable environmental and regulatory requirements, including but not limited to the Restriction of Hazardous Substances (RoHS) Directive, Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) regulation, and conflict minerals reporting requirements under the Dodd-Frank Act or equivalent legislation. Supplier shall provide material declarations, certificates of compliance, and full material disclosure (FMD) data upon request. Any changes in material composition that may affect compliance status shall be communicated to Buyer at least ninety (90) days in advance. Supplier shall maintain records demonstrating compliance for a minimum of ten (10) years. Non-compliance discovered after delivery shall be treated as a warranty defect. Supplier shall participate in Buyer's responsible sourcing programs and provide conflict minerals reporting template (CMRT) data annually.",
+    "key_provisions": [
+      "Full compliance with RoHS, REACH, and conflict minerals regulations",
+      "Material declarations and FMD data provided on request",
+      "90-day advance notice for material composition changes",
+      "10-year record retention for compliance documentation"
+    ],
+    "relevance_to_eco": "Regulatory compliance changes are a common ECO driver; this clause ensures that compliance-driven ECOs are properly documented and that Supplier proactively communicates material changes that could trigger ECOs.",
+    "negotiation_lever": "GSM can leverage compliance requirements to justify ECOs, negotiate cost-sharing for regulatory-driven material changes, and hold Supplier accountable for costs arising from undisclosed non-compliance requiring corrective ECOs."
+  },
+  {
+    "id": "M19",
+    "section_number": "\u00a719.0",
+    "title": "Dispute Resolution",
+    "full_text": "The parties shall attempt to resolve any disputes arising under this Agreement through good-faith negotiations between designated representatives within thirty (30) days of written notice of the dispute. If negotiations fail, the dispute shall be escalated to senior management of both parties for resolution within an additional thirty (30) days. Unresolved disputes shall be submitted to binding arbitration administered by a nationally recognized arbitration organization under its commercial arbitration rules. The arbitration shall take place in a mutually agreed neutral location, and the arbitrator's decision shall be final and binding. Each party shall bear its own costs of arbitration, with the arbitrator's fees split equally. Nothing in this section shall prevent either party from seeking injunctive relief in a court of competent jurisdiction to protect its intellectual property or confidential information. The governing law for this Agreement shall be specified in the applicable country-specific addendum.",
+    "key_provisions": [
+      "30-day good-faith negotiation period before escalation",
+      "Senior management escalation for additional 30 days",
+      "Binding arbitration for unresolved disputes",
+      "Injunctive relief preserved for IP and confidentiality matters"
+    ],
+    "relevance_to_eco": "ECO cost disagreements can escalate to formal disputes; this clause provides a structured resolution path that avoids costly litigation while protecting both parties' interests.",
+    "negotiation_lever": "GSM can use the dispute resolution framework to maintain negotiating leverage on ECO costs, knowing that unresolved disagreements have a defined escalation path rather than stalling indefinitely."
+  },
+  {
+    "id": "M20",
+    "section_number": "\u00a720.0",
+    "title": "Insurance & Indemnification",
+    "full_text": "Supplier shall maintain commercial general liability insurance with minimum coverage of five million dollars ($5,000,000) per occurrence and ten million dollars ($10,000,000) in aggregate, product liability insurance, and workers' compensation insurance as required by applicable law. Supplier shall name Buyer as an additional insured on its commercial general liability and product liability policies. Certificates of insurance shall be provided to Buyer annually and upon request. Supplier shall indemnify, defend, and hold harmless Buyer from and against all claims, damages, losses, and expenses arising from Supplier's negligence, willful misconduct, or breach of this Agreement. Indemnification obligations shall survive termination of this Agreement. Supplier shall notify Buyer immediately of any claims or incidents that may give rise to a claim under this section. Buyer's acceptance of insurance certificates does not limit Supplier's indemnification obligations.",
+    "key_provisions": [
+      "$5M per occurrence / $10M aggregate liability insurance minimum",
+      "Buyer named as additional insured on CGL and product liability policies",
+      "Broad indemnification for negligence, misconduct, and breach",
+      "Indemnification survives Agreement termination"
+    ],
+    "relevance_to_eco": "ECO-related defects or failures may trigger indemnification claims; adequate insurance coverage ensures Supplier can fulfill its financial obligations if an ECO introduces a latent defect.",
+    "negotiation_lever": "GSM can require Supplier to confirm that insurance coverage extends to ECO-related liabilities, negotiate enhanced coverage for high-risk ECOs, and ensure indemnification provisions cover consequential damages from defective ECO implementation."
+  }
+]

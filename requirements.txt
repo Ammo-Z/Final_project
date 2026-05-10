@@ -1,0 +1,26 @@
+# Core
+anthropic>=0.39.0
+openai>=1.50.0
+
+# RAG & Embeddings
+chromadb>=0.4.22
+sentence-transformers>=2.2.2
+
+# Web UI
+streamlit>=1.38.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.26.0
+pydantic>=2.5.0
+
+# Evaluation
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.7.0
+tiktoken>=0.5.0
+pyyaml>=6.0.1
+tenacity>=8.2.0

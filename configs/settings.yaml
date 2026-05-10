@@ -1,0 +1,63 @@
+# ECO-Impact Interpreter Configuration
+
+app:
+  name: "ECO-Impact Interpreter"
+  version: "1.0.0"
+  description: "Technical-to-Commercial Bridge for Global Supply Managers"
+
+llm:
+  drafting:
+    model: "claude-sonnet-4-20250514"
+    temperature: 0.3
+    max_tokens: 4096
+  critic:
+    model: "claude-sonnet-4-20250514"
+    temperature: 0.1
+    max_tokens: 2048
+  judge:
+    model: "claude-sonnet-4-20250514"
+    temperature: 0.0
+    max_tokens: 2048
+
+rag:
+  embedding_model: "all-MiniLM-L6-v2"
+  persist_directory: "./chroma_db"
+  indices:
+    glossary:
+      collection_name: "glossary_index"
+      top_k: 3
+      data_path: "./data/glossary/glossary_800.json"
+    eco_corpus:
+      collection_name: "eco_corpus_index"
+      top_k: 3
+      data_path: "./data/eco_corpus/eco_corpus_120.json"
+    msa:
+      collection_name: "msa_index"
+      top_k: 2
+      data_path: "./data/msa_templates/msa_template.json"
+
+evaluation:
+  test_cases_path: "./data/test_cases/test_cases_30.json"
+  rubric_dimensions:
+    - translation_accuracy
+    - completeness
+    - citation_faithfulness
+    - action_usefulness
+    - refusal_correctness
+    - latency
+  targets:
+    translation_accuracy: 4.2
+    completeness: 4.0
+    citation_faithfulness: 0.95
+    action_usefulness: 3.8
+    refusal_correctness: 0.833  # 5/6
+    latency_p50: 12.0
+    latency_p95: 25.0
+    cost_per_brief: 0.05
+
+pipeline:
+  max_retries: 2
+  confidence_threshold: 0.7
+  refusal_threshold: 0.5
+  enable_self_critique: true
+  enable_citations: true

@@ -1,0 +1,1137 @@
+[
+  {
+    "case_id": "CASE-01",
+    "artifact_type": "ECO",
+    "commodity": "battery",
+    "input_artifact": "ECO-24817: Change battery cathode binder from PVDF-A to PVDF-B, effective W38. Supplier claims +$0.42/cell NRE and 5-week requal. Reason: PVDF-A upstream supplier exiting market Q3.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Battery cell supplier is switching cathode binder material due to upstream raw-material exit. Per-cell cost increases by $0.42 with a one-time NRE charge. A 5-week requalification cycle is required before mass production can resume on the new formulation. Risk is moderate because binder chemistry affects cycle-life and swelling behavior.",
+      "translation_zh": "电池电芯供应商因上游原材料供应商退出市场，需更换阴极粘结剂材料。每颗电芯成本增加$0.42，并产生一次性NRE费用。新配方量产前需完成5周的重新认证周期。风险为中等，因粘结剂化学成分影响循环寿命和膨胀特性。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.42/cell",
+      "nre_estimate": "$15,000-$25,000 (tooling validation + cell-level cycling tests)",
+      "cost_reasoning": "PVDF-B is a specialty fluoropolymer with fewer qualified sources; the premium reflects limited competition and additional incoming-QC requirements.",
+      "schedule_weeks": 5,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "Binder change may affect electrode adhesion strength and calendar-life degradation",
+        "Limited field data on PVDF-B long-term swelling behavior",
+        "Single-source risk if PVDF-B supplier has capacity constraints"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Request supplier 500-cycle aging data on PVDF-B cells",
+          "owner": "Battery Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Negotiate NRE cap and amortization schedule with supplier",
+          "owner": "Procurement",
+          "confidence": 0.85
+        },
+        {
+          "action": "Align requal timeline with build schedule to avoid line-down risk",
+          "owner": "Program Management",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.88
+    }
+  },
+  {
+    "case_id": "CASE-02",
+    "artifact_type": "PCN",
+    "commodity": "display",
+    "input_artifact": "PCN-2024-0391: Display driver IC (DDI) P/N LX7720A declared EOL effective 2025-01-15. Last-time-buy deadline 2024-10-31. Recommended alternate P/N LX7720B-R2 requires FW patch v3.1.7 for gamma-table compatibility. Lead time 14 weeks ARO for LX7720B-R2.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "The display driver IC is going end-of-life. The alternate part requires a firmware patch for gamma-table compatibility and has a 14-week lead time. A last-time-buy decision must be made before October 31, 2024 to bridge production until the alternate is qualified.",
+      "translation_zh": "显示驱动IC即将停产。替代料号需要固件补丁以兼容伽马表，交期为14周。必须在2024年10月31日前做出最后一次采购决定，以保障替代料号认证完成前的生产需求。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.18/unit (LX7720B-R2 premium over LX7720A)",
+      "nre_estimate": "$8,000-$12,000 (FW integration + display optical validation)",
+      "cost_reasoning": "Alternate DDI is a newer revision with added features; slight BOM premium plus one-time firmware integration cost.",
+      "schedule_weeks": 14,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Tight LTB deadline — missing it risks production gaps",
+        "FW gamma-table patch may introduce color-shift regressions on existing panel lots",
+        "14-week lead time leaves minimal buffer for DVT/PVT builds"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Place bridge LTB order for LX7720A to cover 12 weeks of production",
+          "owner": "Supply Chain",
+          "confidence": 0.95
+        },
+        {
+          "action": "Begin FW v3.1.7 integration and optical validation immediately",
+          "owner": "Display Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Negotiate pricing and allocation commitment for LX7720B-R2",
+          "owner": "Procurement",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.85
+    }
+  },
+  {
+    "case_id": "CASE-03",
+    "artifact_type": "YIELD",
+    "commodity": "enclosure",
+    "input_artifact": "Yield Excursion Report YER-0083: Anodize Line 3 cosmetic reject rate spiked from 2.1% baseline to 11.7% over W33-W35. Root cause traced to bath chemistry drift — sulfuric acid concentration dropped below 165 g/L spec (measured 148 g/L). Corrective action: bath dump and recharge completed W35.5. Monitoring 3-lot SPC hold.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Enclosure anodize cosmetic yield dropped sharply due to acid-bath chemistry drift. The supplier has dumped and recharged the bath, but a 3-lot SPC hold is in place to confirm recovery. Short-term cost impact from scrap and rework; schedule risk if hold lots fail.",
+      "translation_zh": "外壳阳极氧化良率因酸槽化学成分漂移大幅下降。供应商已完成槽液更换，但需对3批次进行SPC管控以确认恢复。短期内因报废和返工产生成本影响；若管控批次未通过则存在交期风险。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.85/unit (scrap and rework allocation over affected lots)",
+      "nre_estimate": "$0 (corrective action within supplier scope)",
+      "cost_reasoning": "Reject rate increase from 2.1% to 11.7% means ~9.6% additional scrap across 3 weeks of production. Rework and sorting costs absorbed by supplier contractually but may trigger price renegotiation.",
+      "schedule_weeks": 2,
+      "requal_needed": false,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "SPC hold may extend if Cpk does not recover to >1.33 within 3 lots",
+        "Latent cosmetic defects (haze, pitting) may surface at customer FA stage",
+        "Bath chemistry drift could recur without improved titration monitoring"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Require supplier to implement automated titration monitoring on Line 3",
+          "owner": "SQE",
+          "confidence": 0.9
+        },
+        {
+          "action": "Audit incoming cosmetic inspection criteria to catch latent haze defects",
+          "owner": "Quality Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Hold affected WIP inventory pending SPC release decision",
+          "owner": "Operations",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.82
+    }
+  },
+  {
+    "case_id": "CASE-04",
+    "artifact_type": "FA",
+    "commodity": "PCBA",
+    "input_artifact": "FA Report FA-2024-1127: Field return analysis of solder-joint fatigue on U12 (BGA-256, 0.4mm pitch) after 14-month service life. Cross-section shows crack propagation along intermetallic layer (Cu6Sn5). Weibull B10 life estimated at 11 months vs. 36-month target. Suspect inadequate underfill coverage — measured 72% vs. 95% spec.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Field failure analysis reveals premature solder-joint fatigue on a fine-pitch BGA component, with Weibull life significantly below target. Root cause points to inadequate underfill coverage during SMT process. This is a reliability risk requiring immediate corrective action on the underfill dispensing process.",
+      "translation_zh": "现场失效分析显示细间距BGA元器件焊点过早疲劳失效，威布尔寿命远低于目标。根本原因指向SMT制程中底部填充覆盖率不足。这是一个可靠性风险，需立即对底部填充点胶工艺采取纠正措施。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.35/unit (additional underfill material + longer dispense cycle time)",
+      "nre_estimate": "$30,000-$50,000 (dispense program optimization + accelerated thermal cycling validation)",
+      "cost_reasoning": "Fixing underfill coverage requires dispense pattern re-optimization, additional material volume, and validation through 1000-cycle AATC testing. Field rework costs not included.",
+      "schedule_weeks": 6,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Existing field population at risk — B10 at 11 months means early warranty returns",
+        "Underfill rework on shipped units may not be feasible",
+        "Process fix must be validated across all SMT lines to prevent recurrence"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Issue containment action: 100% underfill inspection on current production",
+          "owner": "Manufacturing Engineering",
+          "confidence": 0.95
+        },
+        {
+          "action": "Initiate accelerated thermal cycling test on reworked samples",
+          "owner": "Reliability Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Assess field exposure and warranty reserve adjustment",
+          "owner": "Quality / Finance",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.9
+    }
+  },
+  {
+    "case_id": "CASE-05",
+    "artifact_type": "EVT",
+    "commodity": "mechanical",
+    "input_artifact": "EVT Exit Readout — Hinge Assembly Rev C: Torque spec 0.18±0.03 Nm measured at 0.22 Nm mean (Cpk=0.87). Free-stop angle hold force marginal at 4.2N vs 5.0N min spec. Durability test reached 18,200 cycles vs 20,000 target — 2 of 8 samples showed visible wear on cam surface. Display gap at closed position: 0.35mm mean vs 0.25mm max spec. Recommend: proceed to DVT with cam surface DLC coating and revised spring constant.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "EVT exit results for the hinge assembly show multiple marginal CTQs: torque is above spec with poor Cpk, free-stop hold force is below minimum, durability fell short of target, and display gap exceeds specification. The team recommends proceeding to DVT with a DLC cam coating and spring redesign, but risk is elevated due to the number of open items.",
+      "translation_zh": "转轴组件EVT退出结果显示多项CTQ指标处于边缘状态：扭矩超出规格且Cpk不足，自由停止保持力低于最低要求，耐久性未达目标，合盖间隙超出规格。团队建议在凸轮表面增加DLC涂层并修改弹簧常数后进入DVT阶段，但因未关闭项目较多，风险偏高。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.95/unit (DLC coating + upgraded spring)",
+      "nre_estimate": "$40,000-$60,000 (DLC tooling qualification + revised spring tooling + DVT samples)",
+      "cost_reasoning": "DLC coating adds per-unit cost for PVD deposition step; spring redesign requires new tooling. Multiple marginal results increase likelihood of additional DVT iterations.",
+      "schedule_weeks": 8,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Four marginal CTQs simultaneously suggest systemic design maturity gap",
+        "DLC coating adhesion on cam surface is unproven at volume",
+        "Spring constant change may shift torque curve and affect user feel perception",
+        "DVT schedule at risk if any CTQ requires additional design iteration"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Prioritize DLC adhesion peel-test validation before DVT tool release",
+          "owner": "Mechanical Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Conduct user-feel study on revised torque profile before locking spring spec",
+          "owner": "Human Factors / ID",
+          "confidence": 0.8
+        },
+        {
+          "action": "Prepare fallback plan with alternate cam geometry if DLC does not meet durability",
+          "owner": "Program Management",
+          "confidence": 0.75
+        }
+      ],
+      "overall_confidence": 0.72
+    }
+  },
+  {
+    "case_id": "CASE-06",
+    "artifact_type": "ECO",
+    "commodity": "PCBA",
+    "input_artifact": "ECO-25102: Replace MLCC C47/C48 (10uF 6.3V 0402 X5R) with 10uF 6.3V 0402 X7R to address derating concern at 85°C ambient. Supplier P/N change from GRM155R60J106ME15 to GRM155R71A106KE11. No layout change required — footprint identical.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Two MLCC capacitors are being upgraded from X5R to X7R dielectric to improve high-temperature capacitance retention. This is a drop-in replacement with no PCB layout change. Minimal cost and schedule impact expected.",
+      "translation_zh": "两颗MLCC电容从X5R介质升级为X7R介质，以改善高温下的容值保持率。此为直接替换，无需更改PCB布局。预计成本和交期影响极小。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.006/unit (2x capacitor premium)",
+      "nre_estimate": "$0 (drop-in replacement, no tooling change)",
+      "cost_reasoning": "X7R dielectric commands a small premium over X5R in same form factor. At 2 pieces per unit the delta is negligible.",
+      "schedule_weeks": 0,
+      "requal_needed": false,
+      "risk_level": "LOW",
+      "risk_factors": [
+        "X7R has slightly different DC bias characteristics — verify decoupling performance in circuit simulation",
+        "Supply availability for X7R in 0402 may differ from X5R"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Verify DC bias derating curves for new P/N at operating voltage",
+          "owner": "EE Design",
+          "confidence": 0.9
+        },
+        {
+          "action": "Confirm MOQ and lead time with distributor for X7R variant",
+          "owner": "Procurement",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.95
+    }
+  },
+  {
+    "case_id": "CASE-07",
+    "artifact_type": "ECO",
+    "commodity": "thermal",
+    "input_artifact": "ECO-25344: Upgrade TIM1 from 3.5 W/mK phase-change pad to 5.0 W/mK graphite-enhanced pad on SoC thermal interface. Thickness change from 0.5mm to 0.3mm requires heatsink standoff adjustment (spacer ring P/N REV from -A to -B). Driven by 15% TDP increase in SoC stepping B2.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Thermal interface material is being upgraded to accommodate a higher SoC power dissipation in the new silicon stepping. The thinner, higher-conductivity pad requires a heatsink spacer revision. Moderate cost increase due to premium TIM material and spacer retooling.",
+      "translation_zh": "因新硅片步进版本的SoC功耗增加，需升级导热界面材料。更薄、导热性更高的垫片需要修改散热器垫圈。因高端TIM材料和垫圈重新开模，成本适度增加。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.28/unit (TIM upgrade + spacer revision)",
+      "nre_estimate": "$5,000-$8,000 (spacer ring tooling modification)",
+      "cost_reasoning": "Graphite-enhanced TIM is approximately 2x cost of standard phase-change pad. Spacer ring revision is a minor stamping tool change.",
+      "schedule_weeks": 3,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "Thinner TIM pad reduces tolerance for heatsink flatness variation",
+        "Graphite-enhanced pads may have different pump-out characteristics over thermal cycling",
+        "Spacer ring tolerance stack-up must be re-analyzed"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Run thermal simulation with updated TIM properties and validate Tjunction margin",
+          "owner": "Thermal Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Conduct 500-cycle AATC test on new TIM to verify pump-out resistance",
+          "owner": "Reliability Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Update heatsink flatness incoming spec to accommodate thinner TIM",
+          "owner": "SQE",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.85
+    }
+  },
+  {
+    "case_id": "CASE-08",
+    "artifact_type": "ECO",
+    "commodity": "connector",
+    "input_artifact": "ECO-25501: Change USB-C receptacle from supplier-A P/N USC-16F-SMD to supplier-B P/N UCJ-200S due to supplier-A quality escapes (3 lots failed pin-retention force test in Q2). Supplier-B connector has 0.15mm longer mating depth — requires housing pocket CNC program update. Electrical spec identical.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "USB-C connector is being second-sourced due to quality issues with the incumbent supplier. The alternate connector has a slightly longer mating depth requiring a CNC program update on the housing pocket. Electrically identical; mechanical fit is the primary validation concern.",
+      "translation_zh": "因现有供应商质量问题，USB-C连接器需引入第二供应源。替代连接器配合深度略长，需更新外壳口袋的CNC加工程序。电气规格相同；机械配合是主要验证关注点。",
+      "cost_trend": "DOWN",
+      "unit_price_delta": "-$0.08/unit (supplier-B volume pricing advantage)",
+      "nre_estimate": "$3,000-$5,000 (CNC program update + mating force validation fixtures)",
+      "cost_reasoning": "Supplier-B offers lower unit pricing at committed volumes. CNC program change is minor — same tool, updated G-code only.",
+      "schedule_weeks": 4,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "0.15mm mating depth change may affect cable retention force and user insertion feel",
+        "New supplier qualification requires USB-IF compliance re-test",
+        "Housing pocket tolerance stack-up with new connector must be validated"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Conduct mating force and cable retention test per USB-IF spec",
+          "owner": "Connector Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Validate housing pocket dimensions on first-article CNC samples",
+          "owner": "Mechanical Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Negotiate supply agreement with quality escape penalty clauses",
+          "owner": "Procurement",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.87
+    }
+  },
+  {
+    "case_id": "CASE-09",
+    "artifact_type": "ECO",
+    "commodity": "display",
+    "input_artifact": "ECO-25678: Update polarizer film stack on 13.3\" panel from single-TAC to COP-based structure to improve viewing angle uniformity. Supplier reports -0.3mm total thickness reduction enabling thinner bezel design. Color gamut shift expected: +2% DCI-P3 coverage. Requires OGS bonding pressure profile adjustment.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Display polarizer film is being changed from TAC to COP-based structure for better viewing angle performance. The thinner stack enables bezel reduction but requires bonding process adjustment. Minor color gamut improvement expected, though optical validation is needed to confirm no regression on other metrics.",
+      "translation_zh": "显示偏光片薄膜从TAC结构更换为COP结构，以改善可视角度均匀性。更薄的叠层可实现窄边框设计，但需调整贴合工艺压力参数。预计色域略有提升，但需光学验证确认其他指标无退化。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$1.20/panel",
+      "nre_estimate": "$18,000-$25,000 (bonding process optimization + optical measurement correlation)",
+      "cost_reasoning": "COP polarizer film is more expensive than TAC but offers superior optical properties. Bonding process change requires line-time for parameter optimization.",
+      "schedule_weeks": 6,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "COP film has different moisture absorption behavior — may affect reliability in humid environments",
+        "Bonding pressure change could introduce bubble or delamination defects initially",
+        "Color gamut shift requires re-correlation of production-line colorimeter targets"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Validate 85/85 reliability test with COP polarizer samples",
+          "owner": "Display Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Optimize OGS bonding profile on pilot line before mass production transition",
+          "owner": "Process Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Update colorimeter golden-sample correlation for new film stack",
+          "owner": "Quality Engineering",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.83
+    }
+  },
+  {
+    "case_id": "CASE-10",
+    "artifact_type": "ECO",
+    "commodity": "enclosure",
+    "input_artifact": "ECO-25890: Switch enclosure top-case resin from PC/ABS T65 to PC/ABS T85 (higher heat deflection grade) to pass revised UL94 V-0 flammability requirement at 0.8mm wall thickness. Mold requires gate relocation due to higher melt viscosity. Color matching re-qualification needed — current masterbatch shows 1.2 dE shift on T85.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Enclosure resin grade is being upgraded to meet stricter flammability requirements at the current wall thickness. The higher-viscosity resin requires mold gate relocation and color re-matching. This change touches tooling, materials, and cosmetics simultaneously.",
+      "translation_zh": "为满足现有壁厚下更严格的阻燃要求，需升级外壳树脂等级。更高粘度的树脂需要重新定位模具浇口并重新调色。此变更同时涉及模具、材料和外观。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.15/unit (resin premium)",
+      "nre_estimate": "$35,000-$50,000 (gate relocation + T1 samples + color matching iterations)",
+      "cost_reasoning": "Higher HDT grade resin costs ~8% more per kg. Gate relocation is a significant mold modification. Color matching typically requires 2-3 iterations at $3-5K each.",
+      "schedule_weeks": 8,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Gate relocation may introduce new weld lines affecting cosmetic appearance",
+        "Higher melt viscosity increases risk of short shots and flow marks at thin sections",
+        "Color matching iterations could extend timeline beyond 8 weeks",
+        "UL94 V-0 certification process itself adds 4-6 weeks"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Run moldflow simulation with T85 material properties before gate modification",
+          "owner": "Tooling Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Initiate UL94 sample submission in parallel with T1 sampling",
+          "owner": "Regulatory Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Prepare color matching samples with 3 candidate masterbatch formulations",
+          "owner": "CMF Design",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.78
+    }
+  },
+  {
+    "case_id": "CASE-11",
+    "artifact_type": "PCN",
+    "commodity": "PCBA",
+    "input_artifact": "Subject: PCN Notification — PMIC Wafer Fab Migration\n\nDear Customer, effective Q1 2025, our PMIC P/N PM8150C will migrate wafer fabrication from Fab7 (180nm) to Fab12 (130nm). Die shrink results in new die-attach pad layout. Package outline and pin-out remain unchanged. Qualification report attached. Please acknowledge by Nov 30. Regards, TI FAE Team.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "PMIC supplier is migrating wafer fabrication to a newer node. While the package outline and pinout are unchanged, the internal die layout is different. Customer acknowledgment is required by November 30. Functional and reliability equivalence must be verified despite the 'drop-in' claim.",
+      "translation_zh": "PMIC供应商正在将晶圆制造迁移至更新的工艺节点。虽然封装外形和引脚排列不变，但内部芯片版图不同。需在11月30日前确认。尽管声称可直接替换，仍需验证功能和可靠性等效性。",
+      "cost_trend": "NEUTRAL",
+      "unit_price_delta": "$0.00 (supplier absorbs fab migration cost)",
+      "nre_estimate": "$5,000-$10,000 (internal validation and board-level testing)",
+      "cost_reasoning": "Supplier typically absorbs fab migration costs. Internal validation costs are the main expense — board-level power integrity testing and HTOL equivalence review.",
+      "schedule_weeks": 4,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "Die shrink may alter analog performance characteristics (noise floor, transient response)",
+        "New die-attach pad layout could affect thermal resistance (theta-JA)",
+        "Qualification report must be independently reviewed — supplier data alone is insufficient"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Review supplier qualification report and request HTOL + ESD data comparison",
+          "owner": "Component Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Conduct board-level power integrity bench test comparing old vs new silicon",
+          "owner": "EE Design",
+          "confidence": 0.85
+        },
+        {
+          "action": "Acknowledge PCN with conditional approval pending internal validation",
+          "owner": "Procurement",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.84
+    }
+  },
+  {
+    "case_id": "CASE-12",
+    "artifact_type": "PCN",
+    "commodity": "battery",
+    "input_artifact": "Email from battery supplier: 'Due to lithium carbonate spot price increase of 38% QoQ, we must apply a raw material surcharge of $0.65/cell effective next PO. This is a temporary adjustment and will be reviewed quarterly. Current contract ceiling price has been reached. Please confirm acceptance to avoid shipment hold.'",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Battery cell supplier is invoking a raw material surcharge due to lithium carbonate price increases. The $0.65/cell increase is presented as temporary but requires immediate acceptance to avoid shipment disruption. Contract ceiling has been reached, giving the supplier contractual basis for the adjustment.",
+      "translation_zh": "电池电芯供应商因碳酸锂价格上涨，要求加收原材料附加费。每颗电芯增加$0.65被描述为临时调整，但需立即接受以避免出货中断。合同价格上限已达到，供应商有合同依据进行调整。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.65/cell",
+      "nre_estimate": "$0",
+      "cost_reasoning": "Direct raw material pass-through. Lithium carbonate is ~15% of cell BOM; a 38% increase in carbonate price translates to approximately 5-6% cell cost increase, consistent with the claimed $0.65/cell.",
+      "schedule_weeks": 0,
+      "requal_needed": false,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Supplier threatening shipment hold creates production continuity risk",
+        "'Temporary' surcharges often become permanent without active management",
+        "Contract ceiling breach precedent may embolden other commodity suppliers"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Validate lithium carbonate index pricing against claimed 38% QoQ increase",
+          "owner": "Commodity Management",
+          "confidence": 0.9
+        },
+        {
+          "action": "Negotiate surcharge with sunset clause and index-based adjustment formula",
+          "owner": "Procurement",
+          "confidence": 0.85
+        },
+        {
+          "action": "Accelerate second-source battery cell qualification to reduce leverage exposure",
+          "owner": "Supply Chain Strategy",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.86
+    }
+  },
+  {
+    "case_id": "CASE-13",
+    "artifact_type": "YIELD",
+    "commodity": "display",
+    "input_artifact": "Yield Report — Panel Line B5: OLED evaporation uniformity excursion detected W36. Thickness variation across 6G substrate measured at ±8.2% vs ±3.0% spec. Affected lots: B5-W36-001 through B5-W36-014 (est. 12,400 panels). Mura defect rate at module level: 23%. Supplier has isolated evaporation source 3 for maintenance. ETA to resume: W38.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "OLED panel supplier experienced a major evaporation uniformity excursion affecting approximately 12,400 panels. Mura defect rate is very high at 23%. The affected evaporation source is under maintenance with production resumption expected in 2 weeks. Significant supply shortfall expected.",
+      "translation_zh": "OLED面板供应商发生严重的蒸镀均匀性偏差，影响约12,400片面板。Mura不良率高达23%。受影响的蒸镀源正在维护中，预计2周后恢复生产。预计将出现较大的供应缺口。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$3.50/panel (scrap allocation + expedite premium on replacement panels)",
+      "nre_estimate": "$0 (supplier responsibility)",
+      "cost_reasoning": "23% mura defect rate on 12,400 panels means ~2,850 panels scrapped. Replacement panels from alternate line will carry expedite premium. Total exposure $40-50K.",
+      "schedule_weeks": 2,
+      "requal_needed": false,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "12,400 affected panels could create 2-week supply gap for downstream module assembly",
+        "Mura defects may exist in marginal panels that pass current AOI thresholds",
+        "Evaporation source maintenance ETA is estimated — could extend"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Quantify exact good-panel recovery from affected lots using tightened mura inspection",
+          "owner": "Display Quality",
+          "confidence": 0.9
+        },
+        {
+          "action": "Request supplier expedite production on alternate evaporation line",
+          "owner": "Supply Chain",
+          "confidence": 0.85
+        },
+        {
+          "action": "Assess downstream build schedule impact and communicate to program team",
+          "owner": "Program Management",
+          "confidence": 0.9
+        }
+      ],
+      "overall_confidence": 0.8
+    }
+  },
+  {
+    "case_id": "CASE-14",
+    "artifact_type": "PCN",
+    "commodity": "connector",
+    "input_artifact": "PCN-HRS-2024-088: Hirose FPC connector DF40C-60DP-0.4V(51) transitioning contact plating from hard gold (30u\") to palladium-nickel (PdNi) with gold flash (5u\"). Change effective lot code 2025A onwards. Supplier claims equivalent contact resistance and 500-cycle durability. Updated datasheet revision 2.4 enclosed.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "FPC connector supplier is changing contact plating from hard gold to palladium-nickel with gold flash, likely driven by gold cost reduction. While supplier claims equivalent performance, reduced gold thickness raises durability and contact resistance concerns, especially in humid or corrosive environments.",
+      "translation_zh": "FPC连接器供应商将触点电镀从硬金改为钯镍加闪镀金，可能出于降低黄金成本考虑。虽然供应商声称性能等效，但金层厚度减少在潮湿或腐蚀环境下引发耐久性和接触电阻方面的担忧。",
+      "cost_trend": "DOWN",
+      "unit_price_delta": "-$0.03/connector (gold reduction savings partially passed through)",
+      "nre_estimate": "$2,000-$4,000 (contact resistance validation + environmental testing)",
+      "cost_reasoning": "PdNi plating is significantly cheaper than 30u\" hard gold. Supplier passes through partial savings. Internal validation costs are minor.",
+      "schedule_weeks": 3,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "PdNi contact resistance may degrade faster under high-humidity accelerated aging",
+        "5u\" gold flash wears through more quickly in repeated mating cycles",
+        "Fretting corrosion susceptibility may differ from hard gold baseline"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Conduct contact resistance measurement at 0, 100, 250, and 500 mating cycles",
+          "owner": "Connector Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Run 85/85 humidity test for 500 hours and measure contact resistance delta",
+          "owner": "Reliability Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Accept PCN conditionally pending internal test completion",
+          "owner": "Component Engineering",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.82
+    }
+  },
+  {
+    "case_id": "CASE-15",
+    "artifact_type": "PCN",
+    "commodity": "PCBA",
+    "input_artifact": "Email: 'Hi team, our NAND flash supplier just informed us of a 12% price increase on the 256GB UFS 3.1 package effective Jan 1. They cite increased wafer costs and DRAM cross-subsidy reduction. This affects P/N KLUEG8UHDB-C2D1 across all SKUs. Current quarterly consumption: 180K units. Need alignment on absorption vs. pass-through by EOW.'",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "NAND flash supplier is imposing a 12% price increase on the UFS storage component, citing wafer cost increases and reduced DRAM cross-subsidization. Impact is broad across all SKUs with 180K units per quarter affected. Decision needed on whether to absorb or pass through the cost increase.",
+      "translation_zh": "NAND闪存供应商对UFS存储器件加价12%，理由是晶圆成本上升和DRAM交叉补贴减少。影响范围覆盖所有SKU，季度用量180K颗。需决定是否内部消化还是向下游传导成本增加。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$2.88/unit (12% on ~$24 component)",
+      "nre_estimate": "$0",
+      "cost_reasoning": "12% increase on a ~$24 UFS component equals $2.88/unit. At 180K units/quarter, this is approximately $518K quarterly cost impact or $2.07M annualized.",
+      "schedule_weeks": 0,
+      "requal_needed": false,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "High annualized cost impact (~$2M) requires executive-level decision",
+        "NAND market dynamics are volatile — increase may not be justified long-term",
+        "Absorbing cost without pass-through erodes product margin significantly"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Benchmark NAND spot and contract pricing against supplier claim",
+          "owner": "Commodity Management",
+          "confidence": 0.9
+        },
+        {
+          "action": "Model margin impact across all affected SKUs for finance review",
+          "owner": "Product Finance",
+          "confidence": 0.9
+        },
+        {
+          "action": "Initiate competitive quote from alternate NAND suppliers (Samsung, WDC)",
+          "owner": "Procurement",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.88
+    }
+  },
+  {
+    "case_id": "CASE-16",
+    "artifact_type": "YIELD",
+    "commodity": "PCBA",
+    "input_artifact": "SMT Yield Report W37: ICT first-pass yield dropped from 98.2% to 91.5% on Line 4. Top defect: open solder on J5 (micro-USB connector, 0.65mm pitch). Pareto shows 73% of fails are J5-related. Stencil aperture wear suspected — last stencil change was 48K impressions ago vs 30K recommended interval. New stencil ordered, ETA 3 days.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "SMT line yield dropped significantly due to solder open defects on a micro-USB connector, traced to stencil wear beyond recommended life. New stencil is ordered with 3-day lead time. Short-term production impact from increased rework and potential throughput reduction.",
+      "translation_zh": "因焊膏钢网超出建议使用寿命导致micro-USB连接器焊点虚焊，SMT产线良率大幅下降。新钢网已订购，交期3天。短期内因返工增加和产能可能降低而影响生产。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.12/unit (rework labor for affected production run)",
+      "nre_estimate": "$800 (replacement stencil)",
+      "cost_reasoning": "Rework cost on 6.7% additional defective units over 3-day period. Stencil replacement is routine consumable cost.",
+      "schedule_weeks": 1,
+      "requal_needed": false,
+      "risk_level": "LOW",
+      "risk_factors": [
+        "Cold solder joints from worn stencil may pass ICT but fail in field (latent defect)",
+        "3-day stencil lead time may extend if supplier has stock-out",
+        "Stencil life tracking process needs improvement to prevent recurrence"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Implement stencil impression counter with PM alert at 28K impressions",
+          "owner": "Manufacturing Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "100% visual inspection on J5 solder joints for units produced in last 18K impressions",
+          "owner": "Quality Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Evaluate step-stencil design for J5 aperture to improve process margin",
+          "owner": "Process Engineering",
+          "confidence": 0.75
+        }
+      ],
+      "overall_confidence": 0.9
+    }
+  },
+  {
+    "case_id": "CASE-17",
+    "artifact_type": "PCN",
+    "commodity": "mechanical",
+    "input_artifact": "Supplier notification: 'We are consolidating our CNC machining operations from 3 facilities to 2. Your magnesium alloy bracket P/N MGB-4401 will transfer from Plant Suzhou to Plant Kunshan effective March 2025. Identical Mazak 5-axis equipment installed. We guarantee dimensional equivalence. First article inspection report will be provided within 6 weeks of transfer.'",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Mechanical parts supplier is consolidating CNC facilities and transferring magnesium bracket production to a different plant. While equipment is claimed identical, process transfer introduces variability risk. First article inspection must be rigorously validated before production approval.",
+      "translation_zh": "机加工供应商整合CNC工厂，将镁合金支架生产转移至另一工厂。虽声称设备相同，但工艺转移会引入变异风险。生产批准前必须严格验证首件检验报告。",
+      "cost_trend": "NEUTRAL",
+      "unit_price_delta": "$0.00 (supplier absorbs transfer cost)",
+      "nre_estimate": "$3,000-$5,000 (FA inspection + CMM correlation)",
+      "cost_reasoning": "Supplier absorbs facility transfer cost. Internal costs limited to first article inspection and CMM measurement correlation between old and new site.",
+      "schedule_weeks": 6,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "Plant transfer introduces operator skill, fixture, and environmental variability",
+        "Magnesium machining requires specific coolant chemistry and chip evacuation — new plant may have different process maturity",
+        "'Identical equipment' does not guarantee identical process capability (Cpk)"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Require 30-piece Cpk study on critical dimensions from new plant",
+          "owner": "SQE",
+          "confidence": 0.9
+        },
+        {
+          "action": "Audit new plant magnesium machining capability and safety protocols",
+          "owner": "Supplier Quality",
+          "confidence": 0.85
+        },
+        {
+          "action": "Maintain safety stock from old plant to bridge transfer qualification period",
+          "owner": "Supply Chain",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.83
+    }
+  },
+  {
+    "case_id": "CASE-18",
+    "artifact_type": "PCN",
+    "commodity": "battery",
+    "input_artifact": "PCN-ATL-2024-156: Electrolyte formulation change on cell model P78B — replacing EC:DMC (3:7) with EC:EMC (3:7) solvent blend. Change driven by improved low-temperature discharge performance (-20°C capacity retention improves from 62% to 78%). No change to electrode chemistry or separator. Samples available W40 for customer evaluation.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Battery cell supplier is modifying the electrolyte solvent composition to improve low-temperature performance. While the electrode and separator are unchanged, electrolyte formulation changes can affect cycle life, gassing behavior, and safety performance. Thorough evaluation of supplied samples is critical.",
+      "translation_zh": "电池电芯供应商修改电解液溶剂配方以改善低温性能。虽然电极和隔膜不变，但电解液配方变更可能影响循环寿命、产气行为和安全性能。对供应商提供的样品进行全面评估至关重要。",
+      "cost_trend": "NEUTRAL",
+      "unit_price_delta": "$0.00 (EMC and DMC are similarly priced solvents)",
+      "nre_estimate": "$20,000-$35,000 (full cell-level safety and cycle-life validation)",
+      "cost_reasoning": "Solvent costs are comparable. Main cost is internal validation: cycle-life testing (500+ cycles), nail penetration, overcharge, and cold-temperature characterization.",
+      "schedule_weeks": 10,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "EMC has lower flash point than DMC — safety test results must be carefully evaluated",
+        "Electrolyte change affects SEI layer formation and long-term capacity fade",
+        "Low-temp improvement may come at expense of high-temp cycling stability",
+        "Regulatory re-certification (UN38.3, IEC62133) likely required"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Request full safety test data package from supplier (nail, crush, overcharge, short)",
+          "owner": "Battery Safety",
+          "confidence": 0.95
+        },
+        {
+          "action": "Conduct independent 500-cycle aging test at 25°C and 45°C",
+          "owner": "Battery Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Verify UN38.3 and IEC62133 certification timeline with test lab",
+          "owner": "Regulatory Engineering",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.75
+    }
+  },
+  {
+    "case_id": "CASE-19",
+    "artifact_type": "YIELD",
+    "commodity": "enclosure",
+    "input_artifact": "Injection Molding Yield Alert — P/N ENC-TOP-7700: Sink mark severity on rib-side surfaces exceeding Grade-2 cosmetic limit (measured depth 0.08mm vs 0.05mm max). Affected: cavity 2 and cavity 6 of 8-cavity tool. Mold temperature differential between cavities measured at 12°C (spec: ±3°C). Water channel blockage suspected in manifold B. CM performing ultrasonic cleaning tonight.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Injection molding tool has cooling channel blockage causing temperature imbalance and cosmetic sink marks on two of eight cavities. Ultrasonic cleaning is being performed as corrective action. Production is partially affected — six cavities remain operational.",
+      "translation_zh": "注塑模具冷却水道堵塞导致温度不均，8个腔体中有2个出现外观缩水痕超标。正在进行超声波清洗作为纠正措施。生产部分受影响——6个腔体仍可正常运行。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.05/unit (reduced cavity utilization + sorting cost)",
+      "nre_estimate": "$1,500-$3,000 (ultrasonic cleaning + cooling channel inspection)",
+      "cost_reasoning": "Running 6 of 8 cavities reduces throughput by 25%. Sorting cost for affected WIP from cavities 2 and 6. Cleaning is routine maintenance cost.",
+      "schedule_weeks": 1,
+      "requal_needed": false,
+      "risk_level": "LOW",
+      "risk_factors": [
+        "Ultrasonic cleaning may not fully clear blockage — may need chemical flush or channel re-boring",
+        "Parts from cavities 2 and 6 in recent production may have marginal sink marks requiring sorting",
+        "Recurring blockage indicates need for preventive maintenance schedule improvement"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Verify cooling channel flow rate and temperature recovery after cleaning",
+          "owner": "Tooling Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Sort and quarantine recent production from cavities 2 and 6",
+          "owner": "Quality Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Implement quarterly cooling channel maintenance schedule",
+          "owner": "Manufacturing Engineering",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.9
+    }
+  },
+  {
+    "case_id": "CASE-20",
+    "artifact_type": "PCN",
+    "commodity": "thermal",
+    "input_artifact": "Email from heat-pipe supplier: 'Dear Valued Customer, due to EPA enforcement of new PFAS regulations, our copper sintering process must transition from PFOS-based flux to a PFAS-free alternative by Q2 2025. This may result in up to 10% reduction in capillary wicking performance. We are validating alternative flux chemistries and will provide test data by end of November. No price change anticipated.'",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Heat-pipe supplier must transition away from PFOS-based flux due to EPA PFAS regulation. The alternative flux may reduce wicking performance by up to 10%, which could affect thermal solution performance. This is a regulatory-driven mandatory change with no opt-out available.",
+      "translation_zh": "散热管供应商因EPA PFAS法规必须从PFOS基助焊剂过渡至替代品。替代助焊剂可能导致毛细芯吸性能降低最多10%，可能影响散热方案性能。这是法规驱动的强制变更，无法选择退出。",
+      "cost_trend": "NEUTRAL",
+      "unit_price_delta": "$0.00 (supplier absorbs transition cost)",
+      "nre_estimate": "$10,000-$15,000 (thermal performance re-validation)",
+      "cost_reasoning": "No unit price change from supplier. Internal cost is re-running thermal validation to confirm system-level performance margin is maintained with degraded wicking.",
+      "schedule_weeks": 8,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "10% wicking performance reduction may push thermal solution below margin in worst-case workloads",
+        "Regulatory deadline is non-negotiable — no fallback to current process",
+        "Alternative flux chemistry maturity is unknown until November data arrives",
+        "Other heat-pipe suppliers face same PFAS transition — industry-wide disruption possible"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Model thermal system impact of 10% wicking degradation on Tjunction at max TDP",
+          "owner": "Thermal Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Request supplier performance data on 3 candidate PFAS-free flux chemistries",
+          "owner": "Component Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Identify second heat-pipe supplier further along in PFAS-free transition",
+          "owner": "Supply Chain",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.7
+    }
+  },
+  {
+    "case_id": "CASE-21",
+    "artifact_type": "ADVERSARIAL",
+    "commodity": "PCBA",
+    "input_artifact": "hey can someone look at the BOM? i think something's wrong with the connector but not sure which one. might be the FPC or maybe the board-to-board. talked to james about it last week",
+    "expected_behavior": "REFUSAL",
+    "gold_brief": {
+      "refusal_reason": "Input is a vague Slack-style message with no specific engineering data, part numbers, or defined issue. Cannot generate a meaningful commercial brief without concrete technical information.",
+      "missing_info": [
+        "Specific connector part number or reference designator",
+        "Nature of the issue (electrical, mechanical, quality, cost, supply)",
+        "BOM revision and product SKU",
+        "Any test data, failure mode, or measurement"
+      ],
+      "required_clarifications": [
+        "Which connector (FPC or board-to-board) and what is the part number or ref-des?",
+        "What specifically is wrong — is this a design issue, field failure, supply issue, or cost concern?",
+        "What product and BOM revision does this apply to?",
+        "Are there any test results, failure analysis data, or supplier communications?"
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-22",
+    "artifact_type": "ADVERSARIAL",
+    "commodity": "battery",
+    "input_artifact": "FYI — battery team says cells are 'a bit puffy' on some units from last build. Not sure how many. Will check Monday. Probably fine tho.",
+    "expected_behavior": "REFUSAL",
+    "gold_brief": {
+      "refusal_reason": "Report of battery swelling without quantitative data. Battery swelling is a safety-critical issue that cannot be assessed casually. The dismissive tone ('probably fine') is concerning for a safety-critical observation.",
+      "missing_info": [
+        "Quantified swelling measurement (thickness increase in mm or %)",
+        "Number of affected units and lot/batch identification",
+        "Cell model, supplier, and date code",
+        "Storage and operating conditions of affected units",
+        "Whether units have been isolated per battery safety protocol"
+      ],
+      "required_clarifications": [
+        "How many units show swelling and what is the measured thickness increase?",
+        "What is the cell part number, supplier, and lot code?",
+        "Have the affected units been quarantined per battery safety SOP?",
+        "What were the charge/discharge conditions and ambient temperature for the build?",
+        "Has the battery safety team been notified?"
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-23",
+    "artifact_type": "ADVERSARIAL",
+    "commodity": "display",
+    "input_artifact": "asdfghjkl testing 123 ignore this message placeholder text for display issue tracking system integration test do not process",
+    "expected_behavior": "REFUSAL",
+    "gold_brief": {
+      "refusal_reason": "Input is test/placeholder text with no meaningful engineering or commercial content. Contains explicit instruction to ignore ('do not process').",
+      "missing_info": [
+        "No engineering artifact content present",
+        "No identifiable commodity, part number, or technical issue"
+      ],
+      "required_clarifications": [
+        "Please provide an actual engineering change, PCN, yield report, or other technical artifact for interpretation."
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-24",
+    "artifact_type": "ADVERSARIAL",
+    "commodity": "enclosure",
+    "input_artifact": "We need to change the enclosure material. The current one isn't working. Please advise on cost and schedule impact.",
+    "expected_behavior": "REFUSAL",
+    "gold_brief": {
+      "refusal_reason": "Request lacks specificity on critical parameters: current material, proposed material, failure mode, product identifier, and volume. Cannot generate cost or schedule assessment without these fundamentals.",
+      "missing_info": [
+        "Current enclosure material specification and grade",
+        "Proposed replacement material (or performance requirements for selection)",
+        "What 'isn't working' means — failure mode, test result, or field issue",
+        "Product identifier and production volume",
+        "Dimensional or tooling constraints"
+      ],
+      "required_clarifications": [
+        "What is the current material (e.g., PC/ABS, aluminum, magnesium) and what are you considering changing to?",
+        "What specific failure or requirement is driving the change?",
+        "Which product and part number is affected?",
+        "What is the production volume and timeline requirement?"
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-25",
+    "artifact_type": "ADVERSARIAL",
+    "commodity": "mechanical",
+    "input_artifact": "Forwarding this from the supplier. They want to raise prices 'significantly' on 'several components' starting 'soon.' Can you evaluate the impact? Thanks.",
+    "expected_behavior": "REFUSAL",
+    "gold_brief": {
+      "refusal_reason": "All critical parameters are undefined: 'significantly' (no amount), 'several components' (no part numbers), 'soon' (no date). The original supplier communication was not included. Cannot evaluate commercial impact without concrete data.",
+      "missing_info": [
+        "The actual supplier communication (email, letter, PCN)",
+        "Specific part numbers and current pricing",
+        "Proposed price increase amounts (% or absolute)",
+        "Effective date of the price change",
+        "Supplier name and contractual context"
+      ],
+      "required_clarifications": [
+        "Please forward the actual supplier communication with specific pricing details.",
+        "Which supplier and which specific part numbers are affected?",
+        "What are the current unit prices and proposed new prices?",
+        "When does the price increase take effect?"
+      ]
+    }
+  },
+  {
+    "case_id": "CASE-26",
+    "artifact_type": "FA",
+    "commodity": "battery",
+    "input_artifact": "FA Report FA-2024-1203: Customer return unit S/N XKJ88120 — battery failed to charge after 8-month usage. Teardown reveals internal CID (Current Interrupt Device) triggered. Cell OCV measured at 0.02V. CT scan shows localized copper dissolution near negative tab weld, indicating deep-discharge event. Battery management FW log shows BMS entered sleep mode without activating low-voltage cutoff at 2.5V threshold.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Field failure analysis shows a battery deep-discharge event caused by BMS firmware failing to activate low-voltage cutoff. The CID triggered due to copper dissolution from over-discharge, permanently disabling the cell. This is a firmware defect in the battery management system, not a cell-level issue.",
+      "translation_zh": "现场失效分析表明BMS固件未能启动低压保护导致电池深度放电。过放引起铜溶解触发CID，永久性禁用电芯。这是电池管理系统的固件缺陷，而非电芯级别问题。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.00/unit (FW fix only, no hardware change)",
+      "nre_estimate": "$15,000-$25,000 (FW patch development + field update deployment infrastructure)",
+      "cost_reasoning": "Root cause is firmware, so no BOM cost change. NRE covers FW patch development, regression testing, and OTA deployment cost. Field replacement of affected units is a separate warranty cost.",
+      "schedule_weeks": 4,
+      "requal_needed": true,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "Entire installed base may be affected by the same BMS FW defect",
+        "Deep-discharge-induced copper dissolution is a safety concern (potential internal short in future cycles)",
+        "OTA firmware update deployment may not reach all units (offline units at risk)",
+        "Potential regulatory reporting obligation depending on market and failure count"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Issue immediate FW patch for BMS low-voltage cutoff logic and deploy OTA",
+          "owner": "FW Engineering",
+          "confidence": 0.95
+        },
+        {
+          "action": "Quantify field exposure: how many units have FW version with this defect?",
+          "owner": "Quality / Data Analytics",
+          "confidence": 0.9
+        },
+        {
+          "action": "Evaluate regulatory reporting requirements (UL, IEC, DOT) based on failure mode",
+          "owner": "Regulatory / Legal",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.92
+    }
+  },
+  {
+    "case_id": "CASE-27",
+    "artifact_type": "EVT",
+    "commodity": "thermal",
+    "input_artifact": "EVT Thermal Readout — Vapor Chamber Rev B: Max Tjunction under sustained workload: 97.2°C vs 95°C spec (marginal fail). Hotspot spreading resistance improved 18% over Rev A flat heat pipe. Vapor chamber shows dry-out onset at 28W input vs 25W TDP (3W margin). Condenser-side delta-T: 4.1°C (excellent). Weight: +8.2g over Rev A solution. Recommend proceed to DVT with 0.1mm thicker wick structure.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "EVT thermal testing of vapor chamber solution shows marginal Tjunction exceedance of 2.2°C above spec under sustained load, though dry-out margin and condenser performance are good. A wick structure thickening is proposed to improve capillary limit and reduce Tjunction. Weight penalty of 8.2g over previous solution.",
+      "translation_zh": "蒸汽腔散热方案EVT热测试显示持续负载下Tjunction超标2.2°C，但干烧余量和冷凝器性能良好。建议增加毛细结构厚度以改善毛细极限并降低Tjunction。较前一方案增重8.2g。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$1.50/unit (vapor chamber premium over flat heat pipe)",
+      "nre_estimate": "$12,000-$18,000 (thicker wick tooling iteration + DVT thermal validation)",
+      "cost_reasoning": "Vapor chamber is inherently more expensive than flat heat pipe. Thicker wick adds minimal material cost but requires tooling update. Weight increase may have indirect BOM impact.",
+      "schedule_weeks": 5,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "2.2°C Tjunction margin gap may not be fully closed by 0.1mm wick change alone",
+        "Thicker wick reduces vapor space — could shift dry-out onset downward",
+        "8.2g weight increase must be accepted by ID/mechanical team",
+        "Sustained workload thermal spec is difficult — transient may pass but steady-state remains tight"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Simulate wick thickness impact on both Tjunction and dry-out onset before tooling commit",
+          "owner": "Thermal Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Get ID/mechanical team sign-off on +8.2g weight budget allocation",
+          "owner": "Program Management",
+          "confidence": 0.85
+        },
+        {
+          "action": "Define DVT thermal test matrix including sustained, transient, and ambient sweep conditions",
+          "owner": "Test Engineering",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.78
+    }
+  },
+  {
+    "case_id": "CASE-28",
+    "artifact_type": "DFM",
+    "commodity": "PCBA",
+    "input_artifact": "DFM Review Memo — Main Logic Board Rev 3.1: Via-in-pad design on U3 (QFN-48, 0.5mm pitch) flagged by CM. Current design uses 0.25mm via with no cap/fill — risk of solder wicking during reflow causing voiding >25% on thermal pad. CM recommends VIPPO (via-in-pad plated over) at +$0.08/board or relocate vias outside pad at cost of 4% routing density loss. Solder void specification: <15%.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Contract manufacturer has flagged a DFM issue with via-in-pad design on a QFN component that risks excessive solder voiding on the thermal pad. Two solutions proposed: VIPPO (adds $0.08/board) or via relocation (loses 4% routing density). This is a yield and reliability concern that should be addressed before volume production.",
+      "translation_zh": "代工厂标记了QFN元器件焊盘内过孔的DFM问题，可能导致热焊盘焊料空洞率过高。提出两种解决方案：VIPPO（每板增加$0.08）或过孔外移（损失4%布线密度）。这是良率和可靠性问题，应在量产前解决。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.08/board (VIPPO option, recommended)",
+      "nre_estimate": "$2,000-$3,000 (PCB re-spin if via relocation chosen; $0 if VIPPO)",
+      "cost_reasoning": "VIPPO adds a plating and planarization step to PCB fabrication. Via relocation avoids per-unit cost but requires board re-layout with potential NRE for new Gerber files and prototype run.",
+      "schedule_weeks": 2,
+      "requal_needed": false,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "Solder voiding >25% on QFN thermal pad degrades thermal performance and reliability",
+        "Via relocation may not be feasible in current routing density constraints",
+        "VIPPO quality depends on PCB fabricator capability — must confirm with approved fab list"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Select VIPPO solution and confirm PCB fabricator capability",
+          "owner": "PCB Layout / EE Design",
+          "confidence": 0.9
+        },
+        {
+          "action": "X-ray void measurement on first VIPPO production lot to verify <15% void target",
+          "owner": "Quality Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Update PCB design guidelines to mandate VIPPO for all QFN thermal pad via-in-pad designs",
+          "owner": "EE Design Standards",
+          "confidence": 0.8
+        }
+      ],
+      "overall_confidence": 0.88
+    }
+  },
+  {
+    "case_id": "CASE-29",
+    "artifact_type": "DFM",
+    "commodity": "enclosure",
+    "input_artifact": "DFM Feedback — Die-Cast Magnesium Chassis P/N MG-CHS-9900: Wall thickness at section A-A reduced to 0.6mm in Rev D (from 0.8mm in Rev C) for weight savings. Die caster warns of incomplete fill risk at 0.6mm over 120mm flow length. Recommended minimum 0.7mm for Mg AZ91D at this flow:thickness ratio. Porosity spec: <3% by area on structural surfaces. Current Rev C porosity: 1.8% average.",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Die caster has flagged incomplete fill risk on a thin-wall section of the magnesium chassis. The 0.6mm wall thickness is below the recommended minimum for the alloy at this flow length. A compromise at 0.7mm is suggested, which partially achieves the weight reduction goal while maintaining manufacturability.",
+      "translation_zh": "压铸厂标记了镁合金机箱薄壁段的充填不足风险。0.6mm壁厚在此流动长度下低于该合金的建议最小值。建议折中采用0.7mm，在保持可制造性的同时部分实现减重目标。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.10/unit (if staying at 0.7mm — slower cycle time vs 0.8mm; +$0.35/unit if attempting 0.6mm with higher scrap rate)",
+      "nre_estimate": "$8,000-$12,000 (die modification to adjust runner and overflow for thinner wall)",
+      "cost_reasoning": "Thinner walls require slower injection speed and optimized overflow, increasing cycle time. If 0.6mm is attempted, higher scrap rate from incomplete fill significantly increases effective cost.",
+      "schedule_weeks": 4,
+      "requal_needed": true,
+      "risk_level": "MEDIUM",
+      "risk_factors": [
+        "0.6mm wall at 120mm flow length exceeds typical AZ91D DFM guideline (flow:thickness ratio >200:1)",
+        "Porosity may increase from 1.8% to above 3% spec at thinner wall section",
+        "Structural integrity under drop test must be re-validated at reduced wall thickness"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Accept 0.7mm compromise and update CAD model accordingly",
+          "owner": "Mechanical Design",
+          "confidence": 0.9
+        },
+        {
+          "action": "Run die-fill simulation (MAGMASOFT) at 0.7mm to verify fill and porosity prediction",
+          "owner": "Casting Engineering",
+          "confidence": 0.85
+        },
+        {
+          "action": "Re-run drop test simulation (FEA) at 0.7mm wall to confirm structural margin",
+          "owner": "Structural Analysis",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.84
+    }
+  },
+  {
+    "case_id": "CASE-30",
+    "artifact_type": "FA",
+    "commodity": "connector",
+    "input_artifact": "FA Report FA-2024-1288: Intermittent display flickering on production units traced to FPC connector J22 (Molex 54548-2271). Micro-section analysis shows contact wipe zone contamination with solder flux residue. Contact resistance measured: 180mΩ (spec: <50mΩ). Contamination correlates with no-clean flux migration during reflow of adjacent components Q8/Q9. Affected: ~2% of Line 2 production (est. 340 units shipped).",
+    "expected_behavior": "PUBLISH",
+    "gold_brief": {
+      "translation_en": "Field failure analysis traces intermittent display flickering to flux contamination on an FPC connector contact zone. The contamination migrated from adjacent component reflow. Approximately 340 shipped units may be affected. This is both a field quality issue and a process design issue requiring immediate containment.",
+      "translation_zh": "现场失效分析将间歇性显示闪烁追溯到FPC连接器触点区域的助焊剂污染。污染来自相邻元器件回流焊时的助焊剂迁移。约340台已发货设备可能受影响。这同时是现场质量问题和工艺设计问题，需立即采取遏制措施。",
+      "cost_trend": "UP",
+      "unit_price_delta": "+$0.04/unit (selective conformal coating on J22 area)",
+      "nre_estimate": "$5,000-$10,000 (conformal coating process setup + field rework assessment)",
+      "cost_reasoning": "Adding selective conformal coating or local flux barrier around J22 adds minimal per-unit cost. Main cost is field rework or replacement of 340 potentially affected units.",
+      "schedule_weeks": 3,
+      "requal_needed": false,
+      "risk_level": "HIGH",
+      "risk_factors": [
+        "340 shipped units at risk of intermittent display flickering — customer experience impact",
+        "2% defect rate suggests process is marginally controlled — could worsen",
+        "Flux migration may affect other connectors not yet symptomatic",
+        "Field rework logistics for shipped units"
+      ],
+      "recommended_actions": [
+        {
+          "action": "Implement selective conformal coating mask around J22 on production line immediately",
+          "owner": "Process Engineering",
+          "confidence": 0.9
+        },
+        {
+          "action": "Identify and quarantine remaining in-channel units from affected Line 2 production for screening",
+          "owner": "Quality / Logistics",
+          "confidence": 0.9
+        },
+        {
+          "action": "Assess field rework feasibility and cost for 340 shipped units",
+          "owner": "Field Service / Quality",
+          "confidence": 0.85
+        }
+      ],
+      "overall_confidence": 0.87
+    }
+  }
+]
